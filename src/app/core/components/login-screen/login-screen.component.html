@@ -1,0 +1,44 @@
+<h1>Welcome to the app</h1>
+<form [formGroup]="form">
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="test@example.com">
+      <mat-error *ngIf="form.get('email')?.invalid">error</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="Password"
+        [type]="passwordType"
+        formControlName="password"
+      >
+      <button (click)="togglePasswordInputType()" matSuffix mat-icon-button type="button">
+        <mat-icon [color]="this.passwordType === 'text' ? 'warn' : 'primary'">visibility</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row center-button">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="logIn()"
+      [disabled]="!form.valid"
+      type="submit"
+    >
+      Login
+    </button>
+  </div>
+</form>
+
+<div class="form-row" *ngIf="error">
+  <mat-error>{{error}}</mat-error>
+</div>
+
+<p class="login-bottom">
+  Do not have an account yet? <a routerLink="/registration">Register!</a>
+</p>

@@ -1,0 +1,10 @@
+:host {
+  width: 100%;
+  display: block;
+
+  ::ng-deep {
+    th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "reg-app-14ba9": {
+      "hosting": {
+        "regApp": [
+          "reg-app-14ba9"
+        ]
+      }
+    }
+  }
+}
